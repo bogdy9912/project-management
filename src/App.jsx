@@ -33,7 +33,10 @@ function App() {
 
   function handleDeleteTask(id) {
     setProjectsState((prev) => {
-      return {};
+      return {
+        ...prev,
+        tasks: prev.tasks.filter((e) => e.id !== id),
+      };
     });
   }
 
